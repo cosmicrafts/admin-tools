@@ -1,0 +1,29 @@
+.menu-main-div{
+    position: absolute;
+    width: 275px;
+    height: calc(100vh - 60px);
+    background-color: #EFEFEF;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 999;
+    border-right: 1px dotted #dddddd;
+}
+.element-div{
+    height: 48px;
+    width: 100%;
+    padding-left: 15px;
+    border-bottom: 1px dotted #222222;
+    line-height: 48px;
+    cursor: pointer;
+}
+.element-div:hover{
+    background-color: #222222;
+}
+.element-div label{
+    cursor: pointer;
+    color: #000000;
+}
+.element-div:hover label{
+    cursor: pointer;
+    color: #EFEFEF;
+}

@@ -1,0 +1,49 @@
+.main-bar{
+    height: 60px;
+    border-bottom: 1px solid #000;
+}
+.bars-menu-div{
+    width: 48px;
+    height: 48px;
+    margin-top: 6px;
+    margin-left: 6px;
+    display: inline-block;
+    cursor: pointer;
+}
+.bars-menu{
+    width: 48px;
+    height: 30px;
+    color: #000;
+    padding-top: 9px;
+}
+.token-div{
+    display: inline-block;
+    position: absolute;
+    right: 150px;
+    margin-top: 10px;
+}
+.img-logo-icp{
+    display: inline-block;
+    margin-right: 5px;
+    width: 40px;
+    vertical-align: middle;
+}
+.txt-icp{
+    display: inline-block;
+}
+.notifications-div{
+    position: absolute;
+    right: 15px;
+    width: 48px;
+    height: 48px;
+    margin-right: 6px;
+    margin-top: 6px;
+    display: inline-block;
+    cursor: pointer;
+}
+.notifications-icon-idle{
+    color: #9D9D9D;
+    width: 48px;
+    height: 30px;
+    padding-top: 9px;
+}

@@ -1,0 +1,78 @@
+.main-table-div{
+    width: calc(100% - 30px);
+    padding: 15px;
+}
+.title-div{
+    width: 100%;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    margin-top: 15px;
+}
+.title-text{
+    font-size: 28px;
+    font-weight: 600;
+}
+.btn-new{
+    width: 150px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    position: absolute;
+    right: 30px;
+    border-radius: 15px;
+    border: 1px solid #222222;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-new:hover{
+    background-color: #222222;
+    border-color: #EFEFEF;
+    color: #EFEFEF;
+}
+.btn-new:hover label{
+    cursor: pointer;
+}
+
+/*New Players*/
+.btn-return{
+    width: 150px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    position: absolute;
+    left: 30px;
+    border-radius: 15px;
+    border: 1px solid #222222;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-return:hover{
+    background-color: #222222;
+    border-color: #EFEFEF;
+    color: #EFEFEF;
+}
+.btn-return:hover label{
+    cursor: pointer;
+}
+.textarea-div{
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    overflow-y: scroll;
+}
+.textarea-data{
+    width: 95%;
+    min-height: 300px;
+    resize: none;
+}
+.add-players-div{
+    width: 100%;
+}
+.add-players-btn{
+    width: 150px;
+    height: 48px;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}

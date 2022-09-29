@@ -1,0 +1,46 @@
+.main-div{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+}
+
+.central-panel{
+    width: 450px;
+    height: 400px;
+    position: absolute;
+    left: calc(50vw - 225px);
+    top: calc(50vh - 200px);
+    background-color: #ABABAB;
+    border-radius: 15px;
+}
+
+.button-login{
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    background-color: #999999;
+    border-radius: 15px;
+    border-color: #343434;
+    cursor: pointer;
+    text-align: center;
+}
+.button-login:hover{
+    width: 85%;
+    height: 50px;
+    line-height: 50px;
+    transition: 200ms;
+}
+.button-plug{
+    top: 120px;
+    left: 10%;
+}
+.button-plug:hover{
+    top: 115px;
+    left: 7.5%;
+}
+.button-text{
+    color: #000000;
+    font-size: 24px;
+    cursor: pointer;
+}
