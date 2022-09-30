@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DataTable from 'react-data-table-component';
+import { useNavigate } from "react-router-dom";
 
 import { idlFactory } from "../../candid/nfts_beta_test";
 import { idlFactory as idlXP } from "../../candid/score_token";
@@ -27,6 +28,7 @@ export default function Players(props){
     const [xpCanister, setXpCanister] = useState(null);
     const [playersCanister, setPlayersCanister] = useState(null);
     const [data, setData] = useState([]);
+    let navigate = useNavigate();
 
     ///Plug wallet
     const generatePlugCan = async () => {
@@ -116,11 +118,11 @@ export default function Players(props){
     }, []);
     
     useEffect(() => { 
-        if(betaNFTsCanister !== null) {
+        if(betaNFTsCanister !== null && playersCanister !== null) {
             getPlayers();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [betaNFTsCanister]);
+    }, [betaNFTsCanister, playersCanister]);
 
     useEffect(() => {
         if(xpCanister !== null) {
@@ -135,7 +137,7 @@ export default function Players(props){
         <>
             <div className="title-div">
                 <label className="title-text">Active Players</label>
-                <div className="btn-new" onClick={() => { props.goTo("/newplayers"); }}>
+                <div className="btn-new" onClick={() => { navigate("/newplayers"); }}>
                     <label>Add Players</label>
                 </div>
             </div>

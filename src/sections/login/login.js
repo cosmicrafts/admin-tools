@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import "./login.css";
-
+import { useNavigate } from "react-router-dom";
 import { Actor, HttpAgent } from "@dfinity/agent";
 import { AuthClient } from "@dfinity/auth-client";
 import { StoicIdentity } from "ic-stoic-identity";
@@ -14,7 +14,14 @@ const host ='https://mainnet.dfinity.network';
 
 export default function Login(props){
 
-    let { setUser } = useContext(AppContext);
+    let { user, setUser } = useContext(AppContext);
+    let navigate = useNavigate();
+  
+    useEffect(() => {
+        if(user.walletState === "connected"){
+            navigate("/");
+        };
+    }, []);
 
     const loginPlug = async () => {
         console.log("Plug");

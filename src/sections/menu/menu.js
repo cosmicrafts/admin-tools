@@ -1,19 +1,22 @@
 import React, { useEffect, useState, useContext } from "react";
 
 import { AppContext } from "../../context";
+import { useNavigate } from "react-router-dom";
 
 import "./menu.css";
 
 export default function Menu(props){
-    let { setMenuOpen } = useContext(AppContext);
+    let { menuOpen, setMenuOpen } = useContext(AppContext);
+    let navigate = useNavigate();
 
     const goToMenu = (menu) => {
-        window.location.href = menu;
+        navigate(menu);
         setMenuOpen(false);
     };
 
     return(
         <>
+        {menuOpen === true ? 
             <div className="menu-main-div">
                 <div className="element-div" onClick={() => { goToMenu("/"); }}>
                     <label>Home</label>
@@ -22,6 +25,9 @@ export default function Menu(props){
                     <label>Players</label>
                 </div>
             </div>
+            :
+            <></>
+        }
         </>
     )
 };
