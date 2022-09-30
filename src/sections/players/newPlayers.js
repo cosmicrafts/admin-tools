@@ -65,8 +65,9 @@ export default function NewPlayers(props){
                     let _side   = (_d[2] !== undefined && _d[2] !== null) ? (_d[2].toUpperCase() === "SPIRATS") ? 2 : (_d[2].toUpperCase() === "COSMICONS" || _d[2].toUpperCase() === "ALLIANCE") ? 1 : getRandomFaction() : getRandomFaction();
                     /// Check if faction is available
                     let _added = await betaNFTsCanister.adminAddBetaPlayer(_wallet, _side, _prin);
-                    let _apprv = await betaCanisterId.approveUser(_prin);
-                    console.log("Reg: " + i, _added, _apprv);
+                    console.log("Reg: " + i, _added);
+                    let _apprv = await betaNFTsCanister.approveUser(_prin);
+                    console.log("Approve:", _apprv);
                 }catch(err){
                     console.log("Error on registry:" + _d, err);
                 }
@@ -75,6 +76,7 @@ export default function NewPlayers(props){
             savePlayer(d, i + 1);
         } else {
             setSaving("Saved");
+            alert("All done");
         }
     };
 
