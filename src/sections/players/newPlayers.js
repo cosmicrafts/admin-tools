@@ -13,6 +13,7 @@ export default function NewPlayers(props){
     const [data, setData] = useState([]);
     const [currentReg, setCurrentReg] = useState(0);
     const [totalReg, setTotalReg] = useState(0);
+    const [saving, setSaving] = useState("Save new players");
     let navigate = useNavigate();
         
     useEffect(() => { generatePlugCan(); }, []);
@@ -50,6 +51,7 @@ export default function NewPlayers(props){
         savePlayer(_splitteddata, 0);
         setTotalReg(_splitteddata.length);
         setCurrentReg(1);
+        setSaving("Saving");
     };
 
     const savePlayer = async (d, i) => {
@@ -63,13 +65,16 @@ export default function NewPlayers(props){
                     let _side   = (_d[2] !== undefined && _d[2] !== null) ? (_d[2].toUpperCase() === "SPIRATS") ? 2 : (_d[2].toUpperCase() === "COSMICONS" || _d[2].toUpperCase() === "ALLIANCE") ? 1 : getRandomFaction() : getRandomFaction();
                     /// Check if faction is available
                     let _added = await betaNFTsCanister.adminAddBetaPlayer(_wallet, _side, _prin);
-                    console.log("Reg: " + i, _added);
+                    let _apprv = await betaCanisterId.approveUser(_prin);
+                    console.log("Reg: " + i, _added, _apprv);
                 }catch(err){
                     console.log("Error on registry:" + _d, err);
                 }
             }
             console.log("i:" + i + " -> ", _d);
             savePlayer(d, i + 1);
+        } else {
+            setSaving("Saved");
         }
     };
 
@@ -102,7 +107,7 @@ export default function NewPlayers(props){
                     <textarea className="textarea-data" id="textarea-data"></textarea>
                 </div>
                 <div className="title-div">
-                    <label> Saving: {currentReg} / {totalReg} </label>
+                    <label> {saving}: {currentReg} / {totalReg} </label>
                 </div>
                 <div>
                     <button className="add-players-btn" onClick={() => { addPlayers(); }}>ADD PLAYERS</button>
