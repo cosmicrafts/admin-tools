@@ -1,7 +1,7 @@
 .main-div{
     width: 100vw;
     height: 100vh;
-    background-color: #000000;
+    background-color: #FFFFFF;
 }
 
 .central-panel{
@@ -10,7 +10,7 @@
     position: absolute;
     left: calc(50vw - 225px);
     top: calc(50vh - 200px);
-    background-color: #ABABAB;
+    background-color: #EAEDED;
     border-radius: 15px;
 }
 
@@ -19,7 +19,7 @@
     height: 40px;
     line-height: 40px;
     position: absolute;
-    background-color: #999999;
+    background-color: #FFFFFF;
     border-radius: 15px;
     border-color: #343434;
     cursor: pointer;

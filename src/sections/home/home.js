@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
 
 import "./home.css";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../context";
 
 import {
     Chart as ChartJS,
@@ -38,7 +40,7 @@ const options = {
       },
     },
 };
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven'];
 
 const data = {
     labels,
@@ -54,6 +56,15 @@ const data = {
 };
 
 export default function Home(props){
+    let { user } = useContext(AppContext);
+    let navigate = useNavigate();
+  
+    useEffect(() => {
+        if(user.walletState !== "connected"){
+            navigate("/login");
+        };
+    }, []);
+
     return(
         <>
             <div className="chart-div">

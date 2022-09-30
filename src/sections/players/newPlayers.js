@@ -1,6 +1,6 @@
 import { Principal } from "@dfinity/principal";
-import React, { useEffect, useState, useContext } from "react";
-import DataTable from 'react-data-table-component';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { idlFactory } from "../../candid/nfts_beta_test";
 
@@ -13,6 +13,7 @@ export default function NewPlayers(props){
     const [data, setData] = useState([]);
     const [currentReg, setCurrentReg] = useState(0);
     const [totalReg, setTotalReg] = useState(0);
+    let navigate = useNavigate();
         
     useEffect(() => { generatePlugCan(); }, []);
     
@@ -79,7 +80,7 @@ export default function NewPlayers(props){
     return(
         <>
             <div className="title-div">
-                <div className="btn-return" onClick={() => { props.goTo("/players"); }}>
+                <div className="btn-return" onClick={() => { navigate("/players"); }}>
                     <label>Return</label>
                 </div>
                 <label className="title-text">Add Players</label>
